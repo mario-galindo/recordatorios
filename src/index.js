@@ -2,10 +2,8 @@ import React from 'react';
 import { StyleSheet, View, FlatList, Text, Modal, TextInput } from 'react-native';
 
 //CUSTOM COMPONENTS
-import Item from './components/item'
-import Button from './components/Button'
-import Input from './components/Input'
-import datos from './datos'
+import { Item, Button, Input } from './components'
+
 
 export default class App extends React.Component {
 
@@ -25,9 +23,9 @@ export default class App extends React.Component {
     const { text, data } = this.state
     const datos = [{ key: Math.random().toString(), title: text }].concat(data);
     this.setState({
-      data:datos,
-      isVisible:false,
-      text:''
+      data: datos,
+      isVisible: false,
+      text: ''
     })
 
   }
@@ -49,7 +47,6 @@ export default class App extends React.Component {
           <View style={[styles.container, styles.center]}>
             <Text style={styles.ModalTitle}>Ingrese Recordatorio</Text>
             <Input placeholder="Recordatorio" onChangeText={this.handleChange} value={this.state.text}>
-
             </Input>
             <Button title="Guardar" onPress={this.handleSave}></Button>
           </View>
@@ -72,7 +69,8 @@ const styles = StyleSheet.create({
   title: {
     textAlign: 'center',
     marginTop: 35,
-    fontSize: 28
+    fontSize: 28,
+    fontFamily: 'open-sans-bold'
   },
   view: {
     height: 50,
