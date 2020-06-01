@@ -22,7 +22,6 @@ export default class App extends React.Component {
     if (!fontLoaded) {
       return <View><Text>Loading Font!</Text></View>
     }
-    // return <View style={{flex:1,alignItems:"center",alignContent:"center",justifyContent:"center"}}><Text>Hola Mario</Text></View>
     return <Application></Application>
 
   }
